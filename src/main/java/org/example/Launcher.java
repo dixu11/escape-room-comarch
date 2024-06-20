@@ -2,6 +2,18 @@ package org.example;
 
 public class Launcher {
     public static void main(String[] args) {
-        System.out.println("Hello");
+        Controller controller = new Controller();
+        controller.startGame();
+
     }
 }
+
+/*
+*
+*
+*
+*
+*
+*
+*
+* */

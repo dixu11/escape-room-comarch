@@ -16,4 +16,5 @@ public class Room {
     public void remove(Item item) {
         items.remove(item);
     }
+
 }

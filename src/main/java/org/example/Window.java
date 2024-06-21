@@ -5,7 +5,7 @@ public class Window extends Item {
         super(name);
     }
 
-    void use() {
+    void use(Room room, Player player) {
         if (used) {
             System.out.println("Zamlnąłeś okno");
         } else {

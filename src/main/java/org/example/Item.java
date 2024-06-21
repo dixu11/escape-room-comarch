@@ -9,7 +9,7 @@ public class Item {
         this.name = name;
     }
 
-    void use() {
+    void use(Room room, Player player) {
         System.out.println("Zaczynamy");
     }
 

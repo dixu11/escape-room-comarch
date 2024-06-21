@@ -20,13 +20,7 @@ public class Service {
     }
 
     List<Item> getRoomItems() {
-        List<Item> visibleRoomItems = new ArrayList<>();
-        for (Item item : actualRoom.getItems()) {
-            if (!item.isUsed()) {
-                visibleRoomItems.add(item);
-            }
-        }
-        return visibleRoomItems;
+        return actualRoom.getItems();
     }
 
 
@@ -34,7 +28,7 @@ public class Service {
         for (Item item : actualRoom.getItems()) {
             if (selectedName.equals(item.getName())) {
                 System.out.println("Wybrano " + item.getName());
-                item.use();
+                item.use(actualRoom,player);
                 return;
             }
         }

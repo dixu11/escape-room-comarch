@@ -8,17 +8,15 @@ public class Service {
     }
 
     void useItem(String selectedName) {
-        boolean itemFound = false;
         for (String itemName : items) {
             if (selectedName.equals(itemName)) {
                 System.out.println("Wybrano " + itemName);
-                itemFound = true;
+                return;
             }
         }
 
-        if(!itemFound){
-            System.out.println("nie ma takiego przedmiotu");
-        }
+        System.out.println("nie ma takiego przedmiotu");
+
 
        /* if (name.equals(items[0])) {
             System.out.println("Wybrano "+ items[0]);

@@ -1,6 +1,6 @@
 package org.example;
 
-public class Item {
+public abstract class Item {
 
     boolean used = false;
      String name;
@@ -9,9 +9,7 @@ public class Item {
         this.name = name;
     }
 
-    void use(Room room, Player player) {
-        System.out.println("Zaczynamy");
-    }
+   abstract void use(Context context);
 
     @Override
     public String toString() {

@@ -7,7 +7,7 @@ public class Controller {
     void startGame() {
         System.out.println("Witaj w grze.");
         Service service = new Service();
-        while(true){
+        while(service.isRunning()){
             System.out.println("Jesteś w pokoju, znajdują się w nim:");
             //iter - skrót do foreach //fori do klasycznego
             for(Item item  : service.getRoomItems() ){
@@ -18,6 +18,6 @@ public class Controller {
             String itemName = scanner.nextLine();
             service.useItem(itemName);
         }
-
+        System.out.println("Wygrałeś brawo!");
     }
 }

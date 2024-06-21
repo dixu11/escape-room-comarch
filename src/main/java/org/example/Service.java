@@ -8,13 +8,14 @@ public class Service {
 
     private Room actualRoom;
     private Player player;
-
+    private boolean running = true;
 
     public Service(){
         List<Item> items = new ArrayList<>();
-        items.add(new Key("klucz"));
+        Key key = new Key("klucz");
+        items.add(key);
         items.add(new Window("okno"));
-        items.add(new Item("drzwi"));
+        items.add(new Door("drzwi",key));
         actualRoom = new Room(items);
         player = new Player();
     }
@@ -23,12 +24,19 @@ public class Service {
         return actualRoom.getItems();
     }
 
+    public boolean isRunning() {
+        return running;
+    }
+
+    public void setRunning(boolean running) {
+        this.running = running;
+    }
 
     void useItem(String selectedName) {
         for (Item item : actualRoom.getItems()) {
             if (selectedName.equals(item.getName())) {
                 System.out.println("Wybrano " + item.getName());
-                item.use(actualRoom,player);
+                item.use(new Context(player,actualRoom,this));
                 return;
             }
         }

@@ -7,11 +7,11 @@ public class Key extends Item {
     }
 
     @Override
-    void use(Room room, Player player) {
+    void use(Context context) {
       //  super.use(); odpalenie kodu use() z Item
         used = true;
         System.out.println("Klucz zabrany");
-        room.remove(this);
-        player.give(this);
+        context.getRoom().remove(this);
+        context.getPlayer().give(this);
     }
 }

@@ -9,4 +9,8 @@ public class Player {
     void give(Item item) {
         items.add(item);
     }
+
+    public boolean has(Item item) {
+        return items.contains(item);
+    }
 }

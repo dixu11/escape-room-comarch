@@ -10,7 +10,7 @@ public class Item {
     }
 
     void use() {
-
+        System.out.println("Zaczynamy");
     }
 
     @Override

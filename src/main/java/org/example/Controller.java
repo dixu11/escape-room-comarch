@@ -10,7 +10,7 @@ public class Controller {
         while(true){
             System.out.println("Jesteś w pokoju, znajdują się w nim:");
             //iter - skrót do foreach //fori do klasycznego
-            for(Item item  : service.getItems() ){
+            for(Item item  : service.getRoomItems() ){
                 System.out.println(item.getName());
             }
             System.out.println("Którego przedmiotu chcesz użyć?");

@@ -1,20 +1,37 @@
 package org.example;
 
 
-public class Service {
-    private Item[] items = {
-            new Item("klucz"),
-            new Window("okno"),
-            new Item("drzwi")
-    };
+import java.util.ArrayList;
+import java.util.List;
 
-    Item[] getItems() {
-        return items;
+public class Service {
+
+    private Room actualRoom;
+    private Player player;
+
+
+    public Service(){
+        List<Item> items = new ArrayList<>();
+        items.add(new Key("klucz"));
+        items.add(new Window("okno"));
+        items.add(new Item("drzwi"));
+        actualRoom = new Room(items);
+        player = new Player();
+    }
+
+    List<Item> getRoomItems() {
+        List<Item> visibleRoomItems = new ArrayList<>();
+        for (Item item : actualRoom.getItems()) {
+            if (!item.isUsed()) {
+                visibleRoomItems.add(item);
+            }
+        }
+        return visibleRoomItems;
     }
 
 
     void useItem(String selectedName) {
-        for (Item item : items) {
+        for (Item item : actualRoom.getItems()) {
             if (selectedName.equals(item.getName())) {
                 System.out.println("Wybrano " + item.getName());
                 item.use();

@@ -16,15 +16,6 @@ public class Controller {
         System.out.println("Którego przedmiotu chcesz użyć?");
         Scanner scanner = new Scanner(System.in);
        String itemName = scanner.nextLine();
-        if (itemName.equals("drzwi")) {
-            System.out.println("Wybrano drzwi");
-        } else if (itemName.equals("okno")) {
-            System.out.println("wybrano okno");
-        }else if(itemName.equals("klucz")){
-            System.out.println("wybrano klucz");
-        }else{
-            System.out.println("nie ma takiego przedmiotu");
-        }
-
+       service.useItem(itemName);
     }
 }

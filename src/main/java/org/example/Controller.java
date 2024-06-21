@@ -9,8 +9,8 @@ public class Controller {
         System.out.println("Jesteś w pokoju, znajdują się w nim:");
         Service service = new Service();
         //iter - skrót do foreach //fori do klasycznego
-        for(String item  : service.getItems() ){
-            System.out.println(item);
+        for(Item item  : service.getItems() ){
+            System.out.println(item.getName());
         }
 
         System.out.println("Którego przedmiotu chcesz użyć?");

@@ -6,5 +6,4 @@ public class Service {
     String[] getItems() {
         return items;
     }
-
 }

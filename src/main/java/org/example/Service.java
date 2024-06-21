@@ -4,7 +4,7 @@ package org.example;
 public class Service {
     private Item[] items = {
             new Item("klucz"),
-            new Item("okno"),
+            new Window("okno"),
             new Item("drzwi")
     };
 
@@ -12,18 +12,12 @@ public class Service {
         return items;
     }
 
-    void useWindow(Item item) {
-        if(item.getName().equals("okno")){
-            item.setUsed(true);
-            System.out.println("Otworzyłeś okno");
-        }
-    }
 
     void useItem(String selectedName) {
         for (Item item : items) {
             if (selectedName.equals(item.getName())) {
                 System.out.println("Wybrano " + item.getName());
-                useWindow(item);
+                item.use();
                 return;
             }
         }

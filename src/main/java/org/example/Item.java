@@ -2,11 +2,15 @@ package org.example;
 
 public class Item {
 
-    private boolean used = false;
-    private String name;
+    boolean used = false;
+     String name;
 
     public Item(String name) {
         this.name = name;
+    }
+
+    void use() {
+
     }
 
     @Override

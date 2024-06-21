@@ -43,15 +43,23 @@ public class Service {
 
         System.out.println("nie ma takiego przedmiotu");
 
-        /*
-           Arrays.stream(items)
+        actualRoom.getItems().stream()
                 .filter(itemName -> itemName.equals(selectedName))
                 .findAny()
                 .ifPresentOrElse(
                         itemName -> System.out.println("Wybrano " + itemName),
                         () -> System.out.println("nie ma takiego przedmiotu")
                 );
-        * */
+
+
+           /*Arrays.stream(items)
+                .filter(itemName -> itemName.equals(selectedName))
+                .findAny()
+                .ifPresentOrElse(
+                        itemName -> System.out.println("Wybrano " + itemName),
+                        () -> System.out.println("nie ma takiego przedmiotu")
+                );*/
+
 
        /* if (name.equals(items[0])) {
             System.out.println("Wybrano "+ items[0]);

@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Controller {
 
+
     void startGame() {
         System.out.println("Witaj w grze.");
         Service service = new Service();
@@ -18,6 +19,10 @@ public class Controller {
             String itemName = scanner.nextLine();
             service.useItem(itemName);
         }
+
+
+
+
         System.out.println("Wygrałeś brawo!");
     }
 }

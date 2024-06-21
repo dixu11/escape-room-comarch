@@ -1,14 +1,26 @@
 package org.example;
 
 public class Service {
-  private String[] items = {"klucz", "furtka","okno"};
+    private String[] items = {"klucz", "furtka", "okno", "drzwi"};
 
     String[] getItems() {
         return items;
     }
 
-    void useItem(String name){
-        if (name.equals(items[0])) {
+    void useItem(String selectedName) {
+        boolean itemFound = false;
+        for (String itemName : items) {
+            if (selectedName.equals(itemName)) {
+                System.out.println("Wybrano " + itemName);
+                itemFound = true;
+            }
+        }
+
+        if(!itemFound){
+            System.out.println("nie ma takiego przedmiotu");
+        }
+
+       /* if (name.equals(items[0])) {
             System.out.println("Wybrano "+ items[0]);
         } else if (name.equals(items[1])) {
             System.out.println("wybrano " + items[1]);
@@ -16,7 +28,7 @@ public class Service {
             System.out.println("wybrano "+ items[2]);
         }else{
             System.out.println("nie ma takiego przedmiotu");
-        }
+        }*/
     }
 
 
